@@ -1,4 +1,5 @@
 host = "db"
+# host = "127.0.0.1"
 user = "root"
 password = "test"
 port = 33060
@@ -125,8 +126,16 @@ typ = sock.recv(1)
 payload = sock.recv(size - 1)
 row2.ParseFromString(payload)
 
-print(row1)
-print(row2)
+def rshift(val, n): return val>>n if val >= 0 else (val+0x100000000)>>n
+def decode_zigzag(val): return rshift(val, 1) ^ - (val & 1)
+# https://gist.github.com/mfuerstenau/ba870a29e16536fdbaba#file-zigzag-encoding-readme-L18
+# https://stackoverflow.com/a/5833119
+row1_id = decode_zigzag(struct.unpack('B', row1.field[0])[0])
+row1_name = row1.field[1].decode('utf-8')[0:-1]
+print(f"{row1_id=}, {row1_name=}")
+row2_id = decode_zigzag(struct.unpack('B', row2.field[0])[0])
+row2_name = row2.field[1].decode('utf-8')[0:-1]
+print(f"{row2_id=}, {row2_name=}")
 
 # RESULTSET_FETCH_DONE = 14
 # https://github.com/mysql/mysql-server/blob/8.0/plugin/x/protocol/protobuf/mysqlx.proto#L114
