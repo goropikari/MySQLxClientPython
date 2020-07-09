@@ -47,7 +47,7 @@ $ python3 sample.py
 
 Open two terminals. Execute `docker-compose exec ubuntu bash` at each terminals (terminal 1, 2).
 ```
-ngrep -N -x # terminal 1
+ngrep -x -q '.' 'host db' # terminal 1
 
 python3 sample.py # terminal 2
 ```
