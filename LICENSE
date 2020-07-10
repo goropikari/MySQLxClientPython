@@ -1,3 +1,9 @@
+protobuf/*.proto files and the generated python scripts (lib/*py) from *.proto are licensed under GNU General Public License, version 2.0.
+
+The proto files are same as the files included in mysql-8.0.20
+https://github.com/mysql/mysql-server/tree/mysql-8.0.20/plugin/x/protocol/protobuf
+
+
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -199,3 +205,5 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+

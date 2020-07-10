@@ -36,11 +36,8 @@ $ python3 sample.py
 #=> collation: 255
 #=> length: 40
 #=>
-#=> field: "\002"
-#=> field: "dog\000"
-#=>
-#=> field: "\004"
-#=> field: "cat\000"
+#=> row1_id=1, row1_name='dog'
+#=> row2_id=2, row2_name='cat'
 ```
 
 # Follow packets
