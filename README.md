@@ -54,7 +54,7 @@ python3 sample.py # terminal 2
 
 Then we obtain packets tranfering between MySQL server and client.
 ```
-# ngrep -N -x
+# ngrep -x -q '.' 'host db'
 interface: eth0 (172.22.0.0/255.255.0.0)
 filter: ((ip || ip6) || (vlan && (ip || ip6)))
 ####
