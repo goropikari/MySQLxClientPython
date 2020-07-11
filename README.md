@@ -1,6 +1,6 @@
 # Building own MySQL Client supporting X Protocol with Python
 
-- [X Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/mysqlx_protocol.html)
+This is a toy implementation to study MySQL [X Protocol](https://dev.mysql.com/doc/dev/mysql-server/latest/mysqlx_protocol.html).
 
 Example:
 ```bash
